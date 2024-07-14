@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import useBlogs from "./hooks/useBlogs";
 
@@ -5,6 +6,10 @@ import useBlogs from "./hooks/useBlogs";
 
 function App() {
   const { createUser } = useBlogs();
+
+  useEffect(() => {
+    createUser("name", "job").then(console.log);
+  }, [createUser]);
 
   return (
     <div className="flex flex-col justify-center">
