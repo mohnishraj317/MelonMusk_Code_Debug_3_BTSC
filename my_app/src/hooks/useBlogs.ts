@@ -8,7 +8,7 @@ export default function useBlogs() {
         "Authorization": "Bearer " + jwt_token
       }
     });
-    return response.data.blogs;
+    return response.data;
   };
 
   return { createUser };
